@@ -98,7 +98,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-   
+    print(args)
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     # Initialize wandb
     wandb.init(
@@ -122,7 +122,7 @@ def main():
     transform = transforms.Compose([
         transforms.Resize(28),
         transforms.ToTensor(),
-        transforms.Normalize([0.5], [0.5])  # Normalize to [-1,1]
+       transforms.Normalize([0.5], [0.5])  # Normalize to [-1,1]
     ])
     
     # Dataset and DataLoader

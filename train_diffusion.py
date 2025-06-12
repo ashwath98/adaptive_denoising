@@ -9,7 +9,7 @@ from src.models.UnetOG import Unet  # Assuming you move the Unet class to a sepa
 import argparse
 import wandb
 import os
-
+import functools
 def train_diffusion_model(model, sde, dataloader, optimizer, device, n_epochs, print_every, train_score=False, scheduler=None, start_epoch=0, checkpoint_dir="checkpoints"):
     model.train()
     model = model.to(device)
